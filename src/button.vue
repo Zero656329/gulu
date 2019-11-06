@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <button class="g-button" :class="{[iconPostion]:true}">
-      <g-icon class="icon" v-if="icon && !loading" :name="icon"/>
-      <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
-      <div class="content">
-        <slot></slot>
-      </div>
-    </button>
-  </div>
+
+  <button class="g-button" class="{[`iconPostion`]:true}" v-if="iconPostion==='right'">
+<g-icon name="loading"></g-icon>
+    <div class="content">
+      <slot></slot>
+    </div>
+
+  </button>
+
 </template>
 <script>
   export default {
@@ -17,7 +17,8 @@
         type: String,
         default: 'left',
         validator(value) {
-          return value === 'left' || value === 'right'
+          console.log(value)
+          return value === 'left' || value === 'right';
         }
       }
     }
