@@ -1,3 +1,9 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 .g-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -15,17 +21,19 @@
     background-color: var(--button-active-bg); }
   .g-button:focus {
     outline: none; }
+  .g-button > .content {
+    order: 2; }
   .g-button > .icon {
     order: 1;
     margin-right: .3em; }
-  .g-button > .content {
-    order: 2; }
+  .g-button.icon-right > .content {
+    order: 1; }
   .g-button.icon-right > .icon {
     order: 2;
     margin-right: 0em;
     margin-left: .3em; }
-  .g-button.icon-right > .content {
-    order: 1; }
+  .g-button .loading {
+    animation: spin 1s infinite linear; }
 
 .g-icon {
   width: 1em;
